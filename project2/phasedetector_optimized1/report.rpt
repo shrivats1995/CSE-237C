@@ -1,0 +1,223 @@
+
+
+================================================================
+== Vivado HLS Report for 'phasedetector'
+================================================================
+* Date:           Fri Oct 26 13:23:03 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        phasedetector
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.63|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  438274|  438274|  438274|  438274|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------+----------------+-----+-----+-----+-----+---------+
+        |                           |                |  Latency  |  Interval | Pipeline|
+        |          Instance         |     Module     | min | max | min | max |   Type  |
+        +---------------------------+----------------+-----+-----+-----+-----+---------+
+        |grp_cordiccart2pol_fu_154  |cordiccart2pol  |  182|  182|  182|  182|   none  |
+        |grp_firQ1_fu_170           |firQ1           |  236|  236|  236|  236|   none  |
+        |grp_firQ2_fu_192           |firQ2           |  236|  236|  236|  236|   none  |
+        |grp_firI1_fu_214           |firI1           |  236|  236|  236|  236|   none  |
+        |grp_firI2_fu_236           |firI2           |  236|  236|  236|  236|   none  |
+        +---------------------------+----------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        +----------+--------+--------+----------+-----------+-----------+------+----------+
+        |          |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+--------+--------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  438272|  438272|       428|          -|          -|  1024|    no    |
+        +----------+--------+--------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    176|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |       16|     34|    5698|  10087|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    179|
+|Register         |        -|      -|     607|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       16|     34|    6305|  10442|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        5|     15|       5|     19|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+----------------------+---------+-------+------+------+
+    |          Instance         |        Module        | BRAM_18K| DSP48E|  FF  |  LUT |
+    +---------------------------+----------------------+---------+-------+------+------+
+    |grp_cordiccart2pol_fu_154  |cordiccart2pol        |        0|     10|  1232|  2419|
+    |grp_firI1_fu_214           |firI1                 |        4|      5|  1014|  1702|
+    |grp_firI2_fu_236           |firI2                 |        4|      5|  1014|  1702|
+    |grp_firQ1_fu_170           |firQ1                 |        4|      5|  1014|  1742|
+    |grp_firQ2_fu_192           |firQ2                 |        4|      5|  1014|  1742|
+    |phasedetector_fadbkb_U57   |phasedetector_fadbkb  |        0|      2|   205|   390|
+    |phasedetector_fsujbC_U58   |phasedetector_fsujbC  |        0|      2|   205|   390|
+    +---------------------------+----------------------+---------+-------+------+------+
+    |Total                      |                      |       16|     34|  5698| 10087|
+    +---------------------------+----------------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |          Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |i_1_fu_275_p2                    |     +    |      0|  0|  38|          31|           1|
+    |I_0_load_A                       |    and   |      0|  0|   8|           1|           1|
+    |I_0_load_B                       |    and   |      0|  0|   8|           1|           1|
+    |Q_0_load_A                       |    and   |      0|  0|   8|           1|           1|
+    |Q_0_load_B                       |    and   |      0|  0|   8|           1|           1|
+    |R_1_load_A                       |    and   |      0|  0|   8|           1|           1|
+    |R_1_load_B                       |    and   |      0|  0|   8|           1|           1|
+    |theta_1_load_A                   |    and   |      0|  0|   8|           1|           1|
+    |theta_1_load_B                   |    and   |      0|  0|   8|           1|           1|
+    |I_0_state_cmp_full               |   icmp   |      0|  0|   8|           2|           1|
+    |Q_0_state_cmp_full               |   icmp   |      0|  0|   8|           2|           1|
+    |R_1_state_cmp_full               |   icmp   |      0|  0|   8|           2|           1|
+    |theta_1_state_cmp_full           |   icmp   |      0|  0|   8|           2|           1|
+    |tmp_fu_270_p2                    |   icmp   |      0|  0|  18|          32|          32|
+    |ap_block_state12                 |    or    |      0|  0|   8|           1|           1|
+    |ap_block_state3                  |    or    |      0|  0|   8|           1|           1|
+    |ap_block_state4_on_subcall_done  |    or    |      0|  0|   8|           1|           1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |Total                            |          |      0|  0| 176|          82|          48|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------+----+-----------+-----+-----------+
+    |       Name       | LUT| Input Size| Bits| Total Bits|
+    +------------------+----+-----------+-----+-----------+
+    |I_0_data_out      |   9|          2|   32|         64|
+    |I_0_state         |  15|          3|    2|          6|
+    |I_TDATA_blk_n     |   9|          2|    1|          2|
+    |Q_0_data_out      |   9|          2|   32|         64|
+    |Q_0_state         |  15|          3|    2|          6|
+    |Q_TDATA_blk_n     |   9|          2|    1|          2|
+    |R_1_data_out      |   9|          2|   32|         64|
+    |R_1_state         |  15|          3|    2|          6|
+    |ap_NS_fsm         |  56|         13|    1|         13|
+    |i_reg_142         |   9|          2|   31|         62|
+    |theta_1_data_out  |   9|          2|   32|         64|
+    |theta_1_state     |  15|          3|    2|          6|
+    +------------------+----+-----------+-----+-----------+
+    |Total             | 179|         39|  170|        359|
+    +------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------+----+----+-----+-----------+
+    |                    Name                   | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------+----+----+-----+-----------+
+    |IIfir_reg_306                              |  32|   0|   32|          0|
+    |IQfir_reg_321                              |  32|   0|   32|          0|
+    |I_0_payload_A                              |  32|   0|   32|          0|
+    |I_0_payload_B                              |  32|   0|   32|          0|
+    |I_0_sel_rd                                 |   1|   0|    1|          0|
+    |I_0_sel_wr                                 |   1|   0|    1|          0|
+    |I_0_state                                  |   2|   0|    2|          0|
+    |I_read_reg_294                             |  32|   0|   32|          0|
+    |QIfir_reg_311                              |  32|   0|   32|          0|
+    |QQfir_reg_316                              |  32|   0|   32|          0|
+    |Q_0_payload_A                              |  32|   0|   32|          0|
+    |Q_0_payload_B                              |  32|   0|   32|          0|
+    |Q_0_sel_rd                                 |   1|   0|    1|          0|
+    |Q_0_sel_wr                                 |   1|   0|    1|          0|
+    |Q_0_state                                  |   2|   0|    2|          0|
+    |Q_read_reg_300                             |  32|   0|   32|          0|
+    |R_1_payload_A                              |  32|   0|   32|          0|
+    |R_1_payload_B                              |  32|   0|   32|          0|
+    |R_1_sel_rd                                 |   1|   0|    1|          0|
+    |R_1_sel_wr                                 |   1|   0|    1|          0|
+    |R_1_state                                  |   2|   0|    2|          0|
+    |ap_CS_fsm                                  |  12|   0|   12|          0|
+    |ap_reg_grp_cordiccart2pol_fu_154_ap_start  |   1|   0|    1|          0|
+    |ap_reg_grp_firI1_fu_214_ap_start           |   1|   0|    1|          0|
+    |ap_reg_grp_firI2_fu_236_ap_start           |   1|   0|    1|          0|
+    |ap_reg_grp_firQ1_fu_170_ap_start           |   1|   0|    1|          0|
+    |ap_reg_grp_firQ2_fu_192_ap_start           |   1|   0|    1|          0|
+    |i_1_reg_289                                |  31|   0|   31|          0|
+    |i_reg_142                                  |  31|   0|   31|          0|
+    |theta_1_payload_A                          |  32|   0|   32|          0|
+    |theta_1_payload_B                          |  32|   0|   32|          0|
+    |theta_1_sel_rd                             |   1|   0|    1|          0|
+    |theta_1_sel_wr                             |   1|   0|    1|          0|
+    |theta_1_state                              |   2|   0|    2|          0|
+    |x_reg_326                                  |  32|   0|   32|          0|
+    |y_reg_331                                  |  32|   0|   32|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+    |Total                                      | 607|   0|  607|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------+-----+-----+------------+---------------+--------------+
+|   RTL Ports  | Dir | Bits|  Protocol  | Source Object |    C Type    |
++--------------+-----+-----+------------+---------------+--------------+
+|ap_clk        |  in |    1| ap_ctrl_hs | phasedetector | return value |
+|ap_rst_n      |  in |    1| ap_ctrl_hs | phasedetector | return value |
+|ap_start      |  in |    1| ap_ctrl_hs | phasedetector | return value |
+|ap_done       | out |    1| ap_ctrl_hs | phasedetector | return value |
+|ap_idle       | out |    1| ap_ctrl_hs | phasedetector | return value |
+|ap_ready      | out |    1| ap_ctrl_hs | phasedetector | return value |
+|I_TDATA       |  in |   32|    axis    |       I       |    pointer   |
+|I_TVALID      |  in |    1|    axis    |       I       |    pointer   |
+|I_TREADY      | out |    1|    axis    |       I       |    pointer   |
+|Q_TDATA       |  in |   32|    axis    |       Q       |    pointer   |
+|Q_TVALID      |  in |    1|    axis    |       Q       |    pointer   |
+|Q_TREADY      | out |    1|    axis    |       Q       |    pointer   |
+|R_TDATA       | out |   32|    axis    |       R       |    pointer   |
+|R_TVALID      | out |    1|    axis    |       R       |    pointer   |
+|R_TREADY      |  in |    1|    axis    |       R       |    pointer   |
+|theta_TDATA   | out |   32|    axis    |     theta     |    pointer   |
+|theta_TVALID  | out |    1|    axis    |     theta     |    pointer   |
+|theta_TREADY  |  in |    1|    axis    |     theta     |    pointer   |
+|length_r      |  in |   32|   ap_none  |    length_r   |    scalar    |
++--------------+-----+-----+------------+---------------+--------------+
+
